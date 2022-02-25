@@ -8,8 +8,8 @@ const Stack =createNativeStackNavigator()
 export const RootNavigator:React.FC =()=>{
     return(
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="SearchScreen">
-                <Stack.Screen name="" component={SearchScreen} />
+            <Stack.Navigator initialRouteName="Search">
+                <Stack.Screen name="Search" component={SearchScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
