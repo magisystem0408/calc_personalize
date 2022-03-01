@@ -1,6 +1,13 @@
 import _ from "lodash";
 import React, { useState, VFC } from "react";
-import { View, StyleSheet, Button, Picker, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Button,
+  Picker,
+  Text,
+  ActivityIndicator,
+} from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/types";
 import axios from "axios";
@@ -11,7 +18,7 @@ const URL = "https://4i3e99.deta.dev/personalities/";
 
 export const SearchScreen: VFC<Props> = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState<string>("ENTJ");
-  const [isloading, setIsLoading] = useState<boolean>(true);
+  const [isloading, setIsLoading] = useState<boolean>(false);
 
   const personals = [
     { type: "ENTJ", name: "指揮官", id: 1 },
@@ -33,33 +40,41 @@ export const SearchScreen: VFC<Props> = ({ navigation }) => {
   ];
   const onSubmit = async () => {
     const reaquestURL = URL + selectedValue;
-    setIsLoading(false);
-    const response = await axios.get(reaquestURL);
     setIsLoading(true);
+    const response = await axios.get(reaquestURL);
+    setIsLoading(false);
     console.log(response);
   };
   return (
-    <View style={styles.container}>
-      <Text>性格型を入力してください。</Text>
-      <Picker
-        selectedValue={selectedValue}
-        style={styles.picker}
-        onValueChange={(itemValue) => {
-          setSelectedValue(itemValue);
-        }}
-      >
-        {_.map(personals, (personal) => {
-          return (
-            <Picker.Item
-              label={personal.name.toString() + "：" + personal.type.toString()}
-              value={personal.type.toString()}
-              key={personal.id.toString()}
-            />
-          );
-        })}
-      </Picker>
-      <Button title="確定する" onPress={onSubmit} />
-    </View>
+    <>
+      {isloading ? (
+        <ActivityIndicator size="large" />
+      ) : (
+        <View style={styles.container}>
+          <Text>性格型を入力してください。</Text>
+          <Picker
+            selectedValue={selectedValue}
+            style={styles.picker}
+            onValueChange={(itemValue) => {
+              setSelectedValue(itemValue);
+            }}
+          >
+            {_.map(personals, (personal) => {
+              return (
+                <Picker.Item
+                  label={
+                    personal.name.toString() + "：" + personal.type.toString()
+                  }
+                  value={personal.type.toString()}
+                  key={personal.id.toString()}
+                />
+              );
+            })}
+          </Picker>
+          <Button title="確定する" onPress={onSubmit} />
+        </View>
+      )}
+    </>
   );
 };
 
