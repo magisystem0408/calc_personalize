@@ -1,16 +1,17 @@
 import React from "react";
-import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import {SearchScreen} from "../screens/SearchScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SearchScreen } from "../screens/SearchScreen";
 
-const Stack =createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
-export const RootNavigator:React.FC =()=>{
-    return(
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="Search">
-                <Stack.Screen name="Search" component={SearchScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
-}
+export const RootNavigator: React.FC = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="SearchPersonalize">
+        <Stack.Screen name="SearchPersonalize" component={SearchScreen} />
+        {/*<Stack.Screen name="SearchPerねこ" component={SearchScreen} />*/}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
