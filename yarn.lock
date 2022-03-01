@@ -1410,6 +1410,14 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/hooks/-/hooks-2.8.1.tgz#6e785431db49318048fdd14b601998437b6cc200"
   integrity sha512-DCmCIC0Gn9m6K0Mlg2MwNmTxMEpBu5lTLsI6b/XUAv/vLGa6o+X7RhCai4FWeqkjCU36+ZOwaLzDo4NBWMXaoQ==
 
+"@react-native-material/core@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@react-native-material/core/-/core-1.3.5.tgz#7e512acf7d7ac18aabbd24690e1a911f7f3a0fb1"
+  integrity sha512-fPDFuQG0RNNqe3L9tqUbPprOw13F8Xpwc79+pI6qFPuCABSBGFh+1SP635IG2McXFvZtkul8sIvU2rRTk1i9lA==
+  dependencies:
+    chroma-js "^2.1.2"
+    react-native-flex-layout "^0.1.2"
+
 "@react-native/assets@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets/-/assets-1.0.0.tgz#c6f9bf63d274bafc8e970628de24986b30a55c8e"
@@ -2112,6 +2120,11 @@ chokidar@^3.5.2:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+chroma-js@^2.1.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.4.2.tgz#dffc214ed0c11fa8eefca2c36651d8e57cbfb2b0"
+  integrity sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==
 
 ci-info@^2.0.0:
   version "2.0.0"
@@ -4719,6 +4732,11 @@ react-native-codegen@^0.0.6:
     flow-parser "^0.121.0"
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
+
+react-native-flex-layout@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-flex-layout/-/react-native-flex-layout-0.1.2.tgz#422d0368175c166ae086d8e1b02a57fbdd0bc99e"
+  integrity sha512-bUhGvSCZvWeTmZIyiNfkv8EvMSQyo33HHqJjaGR5A8CRlYTxNKIZLgmys8qnsstXjxkWPQg7eU6Nsrvcmczavg==
 
 react-native-safe-area-context@^4.0.1:
   version "4.0.1"

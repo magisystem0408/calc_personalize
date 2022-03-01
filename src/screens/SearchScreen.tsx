@@ -3,11 +3,11 @@ import React, { useState, VFC } from "react";
 import {
   View,
   StyleSheet,
-  Button,
   Picker,
   Text,
   ActivityIndicator,
 } from "react-native";
+import { Button } from "@react-native-material/core";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/types";
 import axios from "axios";
@@ -48,7 +48,7 @@ export const SearchScreen: VFC<Props> = ({ navigation }) => {
   return (
     <>
       {isloading ? (
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" style={styles.container} />
       ) : (
         <View style={styles.container}>
           <Text>性格型を入力してください。</Text>
@@ -71,7 +71,7 @@ export const SearchScreen: VFC<Props> = ({ navigation }) => {
               );
             })}
           </Picker>
-          <Button title="確定する" onPress={onSubmit} />
+          <Button title="診断する" onPress={onSubmit} />
         </View>
       )}
     </>
