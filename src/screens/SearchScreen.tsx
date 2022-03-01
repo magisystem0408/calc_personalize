@@ -3,13 +3,16 @@ import React, { useState, VFC } from "react";
 import { View, StyleSheet, Button, Picker, Text } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/types";
+import axios from "axios";
 
 type Props = NativeStackScreenProps<RootStackParamList, "SearchPersonalize">;
 
-const URL = "http://127.0.0.1:8000/personalities/";
+const URL = "https://4i3e99.deta.dev/personalities/";
 
 export const SearchScreen: VFC<Props> = ({ navigation }) => {
-  const [selectedValue, setSelectedValue] = useState<string>("");
+  const [selectedValue, setSelectedValue] = useState<string>("ENTJ");
+  const [isloading, setIsLoading] = useState<boolean>(true);
+
   const personals = [
     { type: "ENTJ", name: "指揮官", id: 1 },
     { type: "ENTP", name: "討論者", id: 2 },
@@ -28,16 +31,20 @@ export const SearchScreen: VFC<Props> = ({ navigation }) => {
     { type: "ENFP", name: "広報運動家", id: 15 },
     { type: "ENFJ", name: "主人公", id: 16 },
   ];
-  const onSubmit = () => {
-    const reaquestURL = console.log("押されました。");
+  const onSubmit = async () => {
+    const reaquestURL = URL + selectedValue;
+    setIsLoading(false);
+    const response = await axios.get(reaquestURL);
+    setIsLoading(true);
+    console.log(response);
   };
   return (
     <View style={styles.container}>
       <Text>性格型を入力してください。</Text>
       <Picker
         selectedValue={selectedValue}
-        style={styles.picler}
-        onValueChange={(itemValue, itemIndex) => {
+        style={styles.picker}
+        onValueChange={(itemValue) => {
           setSelectedValue(itemValue);
         }}
       >
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  picler: {
+  picker: {
     height: 50,
     width: 200,
     borderRadius: 5,

@@ -10,7 +10,6 @@ export const RootNavigator: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SearchPersonalize">
         <Stack.Screen name="SearchPersonalize" component={SearchScreen} />
-        {/*<Stack.Screen name="SearchPerねこ" component={SearchScreen} />*/}
       </Stack.Navigator>
     </NavigationContainer>
   );
