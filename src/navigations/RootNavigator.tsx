@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SearchNavigator } from "./SearchNavigator";
+import { PersonalizeView } from "../screens/PersonalizeView";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +17,7 @@ export const RootNavigator: React.FC = () => {
         />
         <Tab.Screen
           name="Test"
-          component={SearchNavigator}
+          component={PersonalizeView}
           options={{ headerShown: false }}
         />
       </Tab.Navigator>
