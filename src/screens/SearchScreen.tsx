@@ -14,7 +14,7 @@ import axios from "axios";
 
 type Props = NativeStackScreenProps<RootStackParamList, "SearchPersonalize">;
 
-const URL = "https://4i3e99.deta.dev/personalities/";
+const ENDPOINT = "https://4i3e99.deta.dev/personalities/";
 
 export const SearchScreen: VFC<Props> = ({ navigation }) => {
   const [selectedValue, setSelectedValue] = useState<string>("ENTJ");
@@ -39,7 +39,7 @@ export const SearchScreen: VFC<Props> = ({ navigation }) => {
     { type: "ENFJ", name: "主人公", id: 16 },
   ];
   const onSubmit = async () => {
-    const reaquestURL = URL + selectedValue;
+    const reaquestURL = ENDPOINT + selectedValue;
     setIsLoading(true);
     const response = await axios.get(reaquestURL);
     const personalDetails = JSON.parse(JSON.stringify(response.data)).message;
