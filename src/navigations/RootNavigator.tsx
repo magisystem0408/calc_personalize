@@ -1,26 +1,25 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { SearchScreen } from "../screens/SearchScreen";
-import { SearchResultHome } from "../screens/SearchResultHome";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SearchNavigator } from "./SearchNavigator";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export const RootNavigator: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SearchPersonalize">
-        <Stack.Screen
-          name="SearchPersonalize"
-          component={SearchScreen}
-          options={{ title: "性格診断検索システム" }}
+      <Tab.Navigator>
+        <Tab.Screen
+          name="Home"
+          component={SearchNavigator}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="SearchResultHome"
-          component={SearchResultHome}
-          options={{ title: "検索結果" }}
+        <Tab.Screen
+          name="Test"
+          component={SearchNavigator}
+          options={{ headerShown: false }}
         />
-      </Stack.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
