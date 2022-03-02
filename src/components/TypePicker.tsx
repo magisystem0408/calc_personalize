@@ -27,7 +27,7 @@ export const TypePicker: React.VFC<TypePickerProps> = ({
         accessibilityLabel="タイプを選んでください"
         placeholder="タイプを選んでください"
         _selectedItem={{
-          bg: "secondary.400",
+          bg: "info.400",
           endIcon: <CheckIcon size="5" />,
         }}
         mt={2}

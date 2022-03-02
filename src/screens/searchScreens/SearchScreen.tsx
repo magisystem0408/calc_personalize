@@ -3,11 +3,10 @@ import {
     View,
     StyleSheet,
     Text,
-    ActivityIndicator,
 } from "react-native";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 import axios from "axios";
-import {Button} from "native-base";
+import {Button, Heading, HStack, Spinner} from "native-base";
 import {RootStackParamList} from "../../types/types";
 import {TypePicker} from "../../components/TypePicker";
 
@@ -48,7 +47,10 @@ export const SearchScreen: VFC<Props> = ({navigation}) => {
     return (
         <>
             {isloading ? (
-                <ActivityIndicator size="large" style={styles.container}/>
+                <HStack space={2} justifyContent="center" alignItems="center" flex={1}>
+                    <Spinner accessibilityLabel="Loading posts"/>
+                    <Heading color="primary.500" fontSize="md">Loading</Heading>
+                </HStack>
             ) : (
                 <View style={styles.container}>
                     <Text>性格型を入力してください。</Text>
@@ -65,11 +67,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-    },
-    picker: {
-        height: 50,
-        width: 200,
-        borderRadius: 5,
-        borderColor: "transparent",
     },
 });
