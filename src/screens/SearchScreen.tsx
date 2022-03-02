@@ -42,8 +42,9 @@ export const SearchScreen: VFC<Props> = ({ navigation }) => {
     const reaquestURL = URL + selectedValue;
     setIsLoading(true);
     const response = await axios.get(reaquestURL);
+    const personalDetails = JSON.parse(JSON.stringify(response.data)).message;
     setIsLoading(false);
-    console.log(response);
+    navigation.navigate("SearchResultHome", personalDetails);
   };
   return (
     <>
