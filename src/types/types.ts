@@ -1,9 +1,14 @@
 export type RootStackParamList = {
   SearchPersonalize: undefined;
-  SearchResultHome: PersonalDetailsProps;
+  SearchResultHome: Personals;
 };
 
-export type PersonalDetailsProps = {
+type Personals = {
+  type: string;
+  details: PersonalDetails;
+};
+
+interface PersonalDetails {
   character: string;
   description: string;
   compatibility: {
@@ -24,7 +29,7 @@ export type PersonalDetailsProps = {
   };
   name: string;
   type: string;
-};
+}
 
 interface JobList {
   title: string;
