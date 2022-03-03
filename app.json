@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "calc_organization",
-    "slug": "calc_organization",
+    "name": "calc_Personalize",
+    "slug": "calc_personalize",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/magisystem0408/calc_personalize"
   }
 }

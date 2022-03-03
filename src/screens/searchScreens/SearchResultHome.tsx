@@ -12,8 +12,9 @@ export const SearchResultHome: VFC<Props> = ({route, navigation}) => {
     return (
         <View style={styles.container}>
             <SelectButton name={personalDetails.details.name} description={personalDetails.details.description} btnName="自分は誰？" />
-            <SelectButton name={personalDetails.details.name} description={personalDetails.details.description} btnName="理想の相手" />
+            {/*<SelectButton name={personalDetails.details.name} description={personalDetails.details.description} btnName="理想の相手" />*/}
             <SelectButtonSearch type={personalDetails.details.compatibility.best} btnName="理想の相手" />
+            <SelectButtonSearch type={personalDetails.details.compatibility.terrible} btnName="気が合わない相手" />
         </View>
     );
 };

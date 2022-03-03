@@ -8,7 +8,7 @@ type Personals = {
   details: PersonalDetails;
 };
 
-interface PersonalDetails {
+export interface PersonalDetails {
   character: string;
   description: string;
   compatibility: {
