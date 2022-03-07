@@ -17,7 +17,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mamushi.calMamushi",
+      "buildNumber": "1.0.2"
     },
     "android": {
       "adaptiveIcon": {

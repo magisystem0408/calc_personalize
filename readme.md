@@ -15,7 +15,6 @@ yarn start
 ```
 
 ## Architecture
-
 <img width="100%" alt="スクリーンショット 2022-03-03 18 32 59" src="https://user-images.githubusercontent.com/61937077/156537160-7813190e-9f7a-4c82-8e35-c27e007a8958.png">
 
 
@@ -23,6 +22,11 @@ yarn start
 ### Production
 ```shell
 expo publish --release-channel production
+```
+
+### build
+```shell
+expo build:ios --release-channel production
 ```
 
 ## Personal Calulation
